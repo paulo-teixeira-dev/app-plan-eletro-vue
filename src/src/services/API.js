@@ -44,4 +44,21 @@ async function apiPut(url, param) {
     return responseAPI;
 }
 
-export {apiGet, apiPut}
+async function apiDelete(url) {
+    let responseAPI = ''
+    await api.delete(url)
+        .then(function (response) {
+            responseAPI = {
+                status: response.data.status,
+                message: response.data.message,
+                data: response.data.data ?? null
+            }
+        })
+        .catch(function (error) {
+            responseAPI = errorResponse
+        });
+
+    return responseAPI;
+}
+
+export {apiGet, apiPut, apiDelete}

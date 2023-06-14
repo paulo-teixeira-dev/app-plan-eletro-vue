@@ -31,6 +31,13 @@
         router.push({name: 'eletroIndex'})
     }
 
+    async function deleteEletro() {
+        const response = eletroStore.deleteEletroById(eletroStore.eletro.id)
+        if(response){
+            router.push({name: 'eletroIndex'})
+        }
+    }
+
 </script>
 
 <template>
@@ -44,8 +51,8 @@
             </div>
             <div class="col-12 pt-3 d-flex justify-content-between">
                 <div class="d-flex">
-                    <button type="button" class="btn btn-danger">Excluir</button>
-                    <button type="button" class="btn btn-success mx-2" @click="eletroStore.updateEletro">Salvar</button>
+                    <button type="button" class="btn btn-danger" @click="deleteEletro">Excluir</button>
+                    <button type="button" class="btn btn-success mx-2" @click="eletroStore.updateEletro(eletroStore.eletro.id)">Salvar</button>
                 </div>
                 <button type="button" class="btn btn-primary" @click="goBack">Voltar</button>
             </div>
