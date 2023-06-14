@@ -12,6 +12,14 @@ const router = createRouter({
                 title: 'Eletrodomesticos'
             }
         },
+        {
+            path: '/eletro/show/:id',
+            name: 'eletroShow',
+            component: () => import('../views/eletro/Show.vue'),
+            meta: {
+                title: 'Eletrodomesticos - Visualizar'
+            }
+        },
     ]
 })
 
