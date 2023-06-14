@@ -30,6 +30,7 @@
     function goBack(id) {
         router.push({name: 'eletroIndex'})
     }
+
 </script>
 
 <template>
@@ -38,13 +39,13 @@
             <div class="col-12">
                 <v-input btn-class="mb-3" v-model.trim="eletroStore.eletro.nome" :max="200" label="Nome" placeholder="digite o nome"/>
                 <v-input btn-class="mb-3" v-model.trim="eletroStore.eletro.tensao" :max="200" label="Tensão" placeholder="digite o nome"/>
-                <v-select btn-class="mb-3" v-model.trim="eletroStore.eletro.marca.id" :content="marcaStore.marcas.data" label="Marca" placeholder="digite o nome"/>
+                <v-select btn-class="mb-3" v-model.trim="eletroStore.eletro.marca_id" :content="marcaStore.marcas.data" label="Marca" placeholder="digite o nome"/>
                 <v-text-area btn-class="mb-3" v-model.trim="eletroStore.eletro.descricao" label="Descrição"/>
             </div>
             <div class="col-12 pt-3 d-flex justify-content-between">
                 <div class="d-flex">
                     <button type="button" class="btn btn-danger">Excluir</button>
-                    <button type="button" class="btn btn-success mx-2">Salvar</button>
+                    <button type="button" class="btn btn-success mx-2" @click="eletroStore.updateEletro">Salvar</button>
                 </div>
                 <button type="button" class="btn btn-primary" @click="goBack">Voltar</button>
             </div>

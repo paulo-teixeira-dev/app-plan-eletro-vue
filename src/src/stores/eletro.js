@@ -1,7 +1,7 @@
 import {reactive, ref} from 'vue'
 import {defineStore} from 'pinia'
 
-import {apiGet} from '@/services/API.js'
+import {apiGet, apiPut} from '@/services/API.js'
 
 
 export const useEletroStore = defineStore('eletro', () => {
@@ -12,9 +12,7 @@ export const useEletroStore = defineStore('eletro', () => {
         nome: null,
         descricao: null,
         tensao: null,
-        marca: {
-            id: null
-        }
+        marca_id: null
     })
 
     function setEletro(obj = {}) {
@@ -22,7 +20,7 @@ export const useEletroStore = defineStore('eletro', () => {
         eletro.nome = obj.nome ?? null
         eletro.descricao = obj.descricao ?? null
         eletro.tensao = obj.tensao ?? null
-        eletro.marca.id = obj.marca?.id ?? null
+        eletro.marca_id = obj.marca_id ?? null
     }
 
     async function getEletro() {
@@ -35,5 +33,10 @@ export const useEletroStore = defineStore('eletro', () => {
         await setEletro(response.data)
     }
 
-    return {getEletro, getEletroById, eletros, eletro}
+    async function updateEletro() {
+        const response = await apiPut('/eletro/update/' + eletro.id, eletro)
+        await console.log(response);
+    }
+
+    return {getEletro, getEletroById, updateEletro, eletros, eletro}
 })

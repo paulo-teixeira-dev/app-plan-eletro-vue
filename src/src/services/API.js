@@ -27,4 +27,21 @@ async function apiGet(url) {
     return responseAPI;
 }
 
-export {apiGet}
+async function apiPut(url, param) {
+    let responseAPI = ''
+    await api.put(url, param)
+        .then(function (response) {
+            responseAPI = {
+                status: response.data.status,
+                message: response.data.message,
+                data: response.data.data ?? null
+            }
+        })
+        .catch(function (error) {
+            responseAPI = errorResponse
+        });
+
+    return responseAPI;
+}
+
+export {apiGet, apiPut}
