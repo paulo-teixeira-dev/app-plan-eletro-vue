@@ -40,7 +40,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/src/stores" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/src/views/eletro" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -53,8 +53,8 @@
       <recent name="\\wsl$\Ubuntu\home\pauloteixeira\dev-env\github-paulo-teixeira\app-plan-eletro-vue\src--" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="\\wsl$\Ubuntu\home\pauloteixeira\dev-env\github-paulo-teixeira\app-plan-eletro-vue\src\src\stores" />
       <recent name="\\wsl$\Ubuntu\home\pauloteixeira\dev-env\github-paulo-teixeira\app-plan-eletro-vue\src\src\views\eletro" />
+      <recent name="\\wsl$\Ubuntu\home\pauloteixeira\dev-env\github-paulo-teixeira\app-plan-eletro-vue\src\src\stores" />
       <recent name="\\wsl$\Ubuntu\home\pauloteixeira\dev-env\github-paulo-teixeira\app-plan-eletro-vue\src\src\assets" />
     </key>
   </component>
@@ -71,7 +71,7 @@
       <workItem from="1686753982076" duration="15686000" />
       <workItem from="1686773083431" duration="119000" />
       <workItem from="1686773229484" duration="3331000" />
-      <workItem from="1686777163876" duration="8674000" />
+      <workItem from="1686777163876" duration="10157000" />
     </task>
     <servers />
   </component>

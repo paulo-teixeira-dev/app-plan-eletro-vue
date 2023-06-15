@@ -27,6 +27,23 @@ async function apiGet(url) {
     return responseAPI;
 }
 
+async function apiPost(url, param) {
+    let responseAPI = ''
+    await api.post(url, param)
+        .then(function (response) {
+            responseAPI = {
+                status: response.data.status,
+                message: response.data.message,
+                data: response.data.data ?? null
+            }
+        })
+        .catch(function (error) {
+            responseAPI = errorResponse
+        });
+
+    return responseAPI;
+}
+
 async function apiPut(url, param) {
     let responseAPI = ''
     await api.put(url, param)
@@ -61,4 +78,4 @@ async function apiDelete(url) {
     return responseAPI;
 }
 
-export {apiGet, apiPut, apiDelete}
+export {apiGet, apiPost, apiPut, apiDelete}

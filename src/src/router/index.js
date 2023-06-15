@@ -20,6 +20,14 @@ const router = createRouter({
                 title: 'Eletrodomesticos - Visualizar'
             }
         },
+        {
+            path: '/eletro/store/',
+            name: 'eletroStore',
+            component: () => import('../views/eletro/Store.vue'),
+            meta: {
+                title: 'Eletrodomesticos - Cadastrar'
+            }
+        },
     ]
 })
 

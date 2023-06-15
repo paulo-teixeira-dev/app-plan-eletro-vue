@@ -1,5 +1,6 @@
 <script setup>
     import {onMounted} from 'vue'
+
     import {useRouter, useRoute} from 'vue-router'
 
     /**component**/
@@ -19,19 +20,12 @@
     const route = useRoute()
 
     onMounted(() => {
-        eletroStore.getEletroById(route.params.id)
+        eletroStore.setEletro()
         marcaStore.getMarcas()
     })
 
     function goBack() {
         router.push({name: 'eletroIndex'})
-    }
-
-    async function deleteEletro() {
-        const response = eletroStore.deleteEletroById(eletroStore.eletro.id)
-        if(response){
-            router.push({name: 'eletroIndex'})
-        }
     }
 
 </script>
@@ -47,8 +41,7 @@
             </div>
             <div class="col-12 pt-3 d-flex justify-content-between">
                 <div class="d-flex">
-                    <button type="button" class="btn btn-danger" @click="deleteEletro">Excluir</button>
-                    <button type="button" class="btn btn-success mx-2" @click="eletroStore.updateEletro(eletroStore.eletro.id)">Salvar</button>
+                    <button type="button" class="btn btn-success mx-2" @click="eletroStore.storeEletro()">Concluir</button>
                 </div>
                 <button type="button" class="btn btn-primary" @click="goBack">Voltar</button>
             </div>
