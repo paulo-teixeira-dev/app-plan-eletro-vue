@@ -20,6 +20,12 @@ Accesando aplicação
 ```
 http://localhost:8080/
 ```
+### Rotas
+| Rota  | Página |
+| --- | --- |
+| http://localhost:8080/eletro | Listagem |
+| http://localhost:8080/eletro/store/  | Cadastrar |
+| http://localhost:8080/eletro/show/<id> | Visualizar |
 
 ### Portas
 | Serviço  | Porta |
