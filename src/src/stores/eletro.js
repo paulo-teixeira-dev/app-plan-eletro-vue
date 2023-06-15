@@ -2,9 +2,11 @@ import {reactive, ref} from 'vue'
 import {defineStore} from 'pinia'
 
 import {apiGet, apiPut, apiDelete, apiPost} from '@/services/API.js'
-
+import {useAlertStore} from '@/stores/alert.js'
 
 export const useEletroStore = defineStore('eletro', () => {
+
+    const alertStore = useAlertStore();
 
     const eletros = reactive({data: []})
     const eletro = reactive({
@@ -14,6 +16,11 @@ export const useEletroStore = defineStore('eletro', () => {
         tensao: null,
         marca_id: null
     })
+
+    const tensao = [
+        {id: 110, nome: 110},
+        {id: 220, nome: 220},
+    ]
 
     function setEletro(obj = {}) {
         eletro.id = obj.id ?? null
@@ -25,14 +32,20 @@ export const useEletroStore = defineStore('eletro', () => {
 
     async function storeEletro() {
         const response = await apiPost('/eletro/store', eletro)
-        if(response.status == "success"){
+        if (response.status == "success") {
             await setEletro();
         }
+        await alertStore.setAlert(response)
     }
 
     async function getEletros() {
         const response = await apiGet('/eletro/listing')
-        eletros.data = await response.data
+        if (response.status == "error") {
+            await alertStore.setAlert(response)
+        } else {
+            await alertStore.setAlert()
+            eletros.data = await response.data
+        }
     }
 
     async function getEletroById(id = null) {
@@ -42,16 +55,19 @@ export const useEletroStore = defineStore('eletro', () => {
 
     async function updateEletro(id) {
         const response = await apiPut('/eletro/update/' + id, eletro)
+        await alertStore.setAlert(response)
     }
 
     async function deleteEletroById(id) {
         const response = await apiDelete('/eletro/delete/' + id)
-        if(response.status == "success"){
+        if (response.status == "success") {
+            await getEletros();
+            await setEletro();
             await setEletro();
             return true;
         }
         return false
     }
 
-    return {getEletros, getEletroById, updateEletro, deleteEletroById, setEletro, storeEletro, eletros, eletro}
+    return {getEletros, getEletroById, updateEletro, deleteEletroById, setEletro, storeEletro, eletros, eletro, tensao}
 })

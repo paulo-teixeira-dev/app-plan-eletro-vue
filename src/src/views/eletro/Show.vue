@@ -41,7 +41,7 @@
         <div class="row">
             <div class="col-12">
                 <v-input btn-class="mb-3" v-model.trim="eletroStore.eletro.nome" :max="200" label="Nome" placeholder="digite o nome"/>
-                <v-input btn-class="mb-3" v-model.trim="eletroStore.eletro.tensao" :max="200" label="Tensão" placeholder="digite o nome"/>
+                <v-select btn-class="mb-3" v-model.trim="eletroStore.eletro.tensao" :content="eletroStore.tensao" label="Tensão"/>
                 <v-select btn-class="mb-3" v-model.trim="eletroStore.eletro.marca_id" :content="marcaStore.marcas.data" label="Marca" placeholder="digite o nome"/>
                 <v-text-area btn-class="mb-3" v-model.trim="eletroStore.eletro.descricao" label="Descrição"/>
             </div>
