@@ -40,7 +40,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/src/stores" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -72,7 +72,8 @@
       <workItem from="1686773083431" duration="119000" />
       <workItem from="1686773229484" duration="3331000" />
       <workItem from="1686777163876" duration="11055000" />
-      <workItem from="1686831343070" duration="5799000" />
+      <workItem from="1686831343070" duration="6002000" />
+      <workItem from="1686841735833" duration="330000" />
     </task>
     <servers />
   </component>
@@ -92,10 +93,14 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1686785994417">
+    <state x="519" y="210" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1686841763504">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1686785994417" />
+    <state x="519" y="210" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.816@0.0.1536.816" timestamp="1686841763504" />
+    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1686837586981">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1686837586981" />
     <state x="604" y="332" key="NewPhpFileDialog" timestamp="1686764099529">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
