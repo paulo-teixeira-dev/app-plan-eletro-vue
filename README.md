@@ -15,6 +15,11 @@ Criando containers
 ```
 sudo docker compose up -d
 ```
+Accesando aplicação
+
+```
+http://localhost:8080/
+```
 
 ### Portas
 | Serviço  | Porta |
