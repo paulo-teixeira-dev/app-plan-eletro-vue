@@ -1,5 +1,5 @@
 <script setup>
-    import {onMounted} from 'vue'
+    import {onBeforeUnmount, onMounted} from 'vue'
 
     import {useRouter, useRoute} from 'vue-router'
 
@@ -22,6 +22,10 @@
     onMounted(() => {
         eletroStore.setEletro()
         marcaStore.getMarcas()
+    })
+
+    onBeforeUnmount(()=>{
+        eletroStore.getEletros()
     })
 
     function goBack() {

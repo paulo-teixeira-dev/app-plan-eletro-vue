@@ -1,5 +1,5 @@
 <script setup>
-    import {onMounted} from 'vue'
+    import {onMounted } from 'vue'
     import { useRouter } from 'vue-router'
 
 
@@ -13,7 +13,7 @@
     const router = useRouter()
 
     onMounted(() => {
-        eletroStore.getEletro()
+        eletroStore.getEletros()
     })
 
     function goShow(id) {

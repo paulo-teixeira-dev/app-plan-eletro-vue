@@ -25,9 +25,12 @@ export const useEletroStore = defineStore('eletro', () => {
 
     async function storeEletro() {
         const response = await apiPost('/eletro/store', eletro)
+        if(response.status == "success"){
+            await setEletro();
+        }
     }
 
-    async function getEletro() {
+    async function getEletros() {
         const response = await apiGet('/eletro/listing')
         eletros.data = await response.data
     }
@@ -50,5 +53,5 @@ export const useEletroStore = defineStore('eletro', () => {
         return false
     }
 
-    return {getEletro, getEletroById, updateEletro, deleteEletroById, setEletro, storeEletro, eletros, eletro}
+    return {getEletros, getEletroById, updateEletro, deleteEletroById, setEletro, storeEletro, eletros, eletro}
 })
